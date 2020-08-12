@@ -43,9 +43,10 @@ RUN pip install --upgrade pip && \
 RUN jupyter labextension install @lckr/jupyterlab_variableinspector && \
     jupyter labextension install @jupyterlab/toc && \
     jupyter labextension install @ryantam626/jupyterlab_code_formatter && \
-    jupyter serverextension enable --py jupyterlab_code_formatter && \
-    jupyter labextension install @jupyterlab/git && \
-    jupyter serverextension enable --py jupyterlab_git
+    jupyter serverextension enable --py jupyterlab_code_formatter
+# jupyter labextension install @jupyterlab/git && \
+# jupyter serverextension enable --py jupyterlab_git && \
+# pip install --upgrade jupyterlab-git
 WORKDIR /
 RUN mkdir /work
 CMD ["jupyter","lab","--ip=0.0.0.0","--allow-root","--LabApp.token=''"]
